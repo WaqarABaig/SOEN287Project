@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLab</title>
+    <meta name="author" content="Waqar Abbas baig">
+    <meta name="description" content="Pay labs to run the tests you can't do yourself. Project for SOEN 287.">
+    <link rel="stylesheet" href="home.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Header-->
+<header id="site-header">
+    <a href="home.html" id="logo-link">
+        <img src="../Assets/darkmode.png" id="logo" alt="OpenLab">
+    </a>
+
+    <!-- Only shown on phones: opens and closes the menu -->
+    <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="bars" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+    </button>
+
+    <nav id="main-nav" aria-label="Main">
+        <ul id="header_tags">
+            <!-- Dropdown: opens on hover (computer) or on click/tap (any device) -->
+            <li class="dropdown">
+                <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="labs-menu">
+                    LABS <span class="caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="menu" id="labs-menu">
+                    <div class="menu-col">
+                        <p class="menu-heading">BROWSE BY TEST TYPE</p>
+                        <ul class="menu-links menu-links-2col">
+                            <li><a href="labs.html?category=mechanical">MECHANICAL TESTING</a></li>
+                            <li><a href="labs.html?category=materials">MATERIALS ANALYSIS</a></li>
+                            <li><a href="labs.html?category=microscopy">MICROSCOPY &amp; IMAGING</a></li>
+                            <li><a href="labs.html?category=thermal">THERMAL ANALYSIS</a></li>
+                            <li><a href="labs.html?category=electrical">ELECTRICAL TESTING</a></li>
+                            <li><a href="labs.html?category=surface">SURFACE &amp; COATINGS</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-col">
+                        <p class="menu-heading">DIRECTORY</p>
+                        <ul class="menu-links">
+                            <li><a href="labs.html">ALL LABS</a></li>
+                            <li><a href="#how">HOW A REQUEST WORKS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li><a class="nav-link" href="#how">HOW IT WORKS</a></li>
+            <li><a class="nav-link" href="../LABPAGE/Labs.html">FOR LABS</a></li>
+        </ul>
+
+        <div id="logs">
+            <a id="log" href="login.html">SIGN IN</a>
+            <a id="start" class="btn" href="labs.html">START A REQUEST</a>
+        </div>
+    </nav>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section id="hero">
+    <video src="../Assets/Video.mp4" autoplay muted loop playsinline id="video" aria-hidden="true"></video>
+    <div class="shade" aria-hidden="true"></div>
+
+    <div class="overlay">
+        <h1 id="Front">TEST IT ON REAL INSTRUMENTS</h1>
+        <p id="description">Pay labs to run the tests you can't do yourself.<br>
+            Send your request, get a price up front, and follow it until the results arrive.</p>
+        <div class="hero-actions">
+            <a id="hello" class="btn" href="labs.html">FIND LABS</a>
+            <a class="btn btn-ghost" href="#how">HOW IT WORKS</a>
+        </div>
+    </div>
+
+    <a class="scroll-cue" href="#types">SCROLL <span aria-hidden="true">↓</span></a>
+</section>
+
+<!-- Main -->
+<main id="main">
+
+    <!-- Test types -->
+    <section class="section" id="types" aria-labelledby="types-title">
+        <div class="section-head">
+            <h2 class="section-title" id="types-title">BROWSE BY TEST TYPE</h2>
+            <a class="text-link" href="labs.html">ALL 6 LABS →</a>
+        </div>
+
+        <ul class="type-grid">
+            <li>
+                <a class="type-tile" href="labs.html?category=mechanical">
+                    <svg class="plot" viewBox="0 0 200 80" aria-hidden="true">
+                        <path class="axis" d="M10 70 H192 M10 70 V6"/>
+                        <path class="line" d="M10 70 L48 22 C54 16 60 15 70 14 C110 10 140 9 156 12 C166 15 172 24 176 38"/>
+                        <path class="mark" d="M176 38 V70"/>
+                    </svg>
+                    <h3 class="type-name">MECHANICAL TESTING</h3>
+                    <p class="type-meta">2 labs · from $90</p>
+                </a>
+            </li>
+            <li>
+                <a class="type-tile" href="labs.html?category=materials">
+                    <svg class="plot" viewBox="0 0 200 80" aria-hidden="true">
+                        <path class="axis" d="M10 70 H192 M10 70 V6"/>
+                        <path class="line" d="M10 64 H40 L44 30 L48 64 H78 L81 12 L84 64 H112 L115 44 L118 64 H150 L152 52 L154 64 H192"/>
+                    </svg>
+                    <h3 class="type-name">MATERIALS ANALYSIS</h3>
+                    <p class="type-meta">2 labs · from $120</p>
+                </a>
+            </li>
+            <li>
+                <a class="type-tile" href="labs.html?category=microscopy">
+                    <svg class="plot" viewBox="0 0 200 80" aria-hidden="true">
+                        <path class="axis" d="M10 70 H192 M10 70 V6"/>
+                        <circle class="line" cx="100" cy="38" r="26"/>
+                        <path class="line" d="M100 4 V24 M100 52 V72 M66 38 H86 M114 38 H134 M150 66 H186"/>
+                    </svg>
+                    <h3 class="type-name">MICROSCOPY &amp; IMAGING</h3>
+                    <p class="type-meta">2 labs · from $110</p>
+                </a>
+            </li>
+            <li>
+                <a class="type-tile" href="labs.html?category=thermal">
+                    <svg class="plot" viewBox="0 0 200 80" aria-hidden="true">
+                        <path class="axis" d="M10 70 H192 M10 70 V6"/>
+                        <path class="line" d="M10 40 C40 39 70 38 90 38 C100 38 104 66 112 66 C120 66 124 34 134 33 C160 31 180 30 192 30"/>
+                    </svg>
+                    <h3 class="type-name">THERMAL ANALYSIS</h3>
+                    <p class="type-meta">3 labs · from $120</p>
+                </a>
+            </li>
+            <li>
+                <a class="type-tile" href="labs.html?category=electrical">
+                    <svg class="plot" viewBox="0 0 200 80" aria-hidden="true">
+                        <path class="axis" d="M10 70 H192 M10 70 V6"/>
+                        <path class="line" d="M10 68 C80 67 120 66 140 60 C160 54 172 30 182 6"/>
+                    </svg>
+                    <h3 class="type-name">ELECTRICAL TESTING</h3>
+                    <p class="type-meta">1 lab · from $85</p>
+                </a>
+            </li>
+            <li>
+                <a class="type-tile" href="labs.html?category=surface">
+                    <svg class="plot" viewBox="0 0 200 80" aria-hidden="true">
+                        <path class="axis" d="M10 70 H192 M10 70 V6"/>
+                        <path class="line" d="M10 44 L18 38 L24 46 L32 34 L38 42 L46 30 L54 44 L60 36 L70 48 L78 32 L86 40 L94 28 L102 44 L110 36 L118 46 L128 30 L136 42 L146 34 L154 46 L162 38 L172 44 L180 32 L192 40"/>
+                    </svg>
+                    <h3 class="type-name">SURFACE &amp; COATINGS</h3>
+                    <p class="type-meta">2 labs · from $75</p>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section-ruled" id="how" aria-labelledby="how-title">
+        <div class="section-head">
+            <h2 class="section-title" id="how-title">HOW A REQUEST WORKS</h2>
+        </div>
+        <ol class="steps">
+            <li class="step">
+                <span class="step-number" aria-hidden="true">01</span>
+                <h3 class="step-title">SEND YOUR REQUEST</h3>
+                <p>Pick a lab, name the test and standard, describe your sample and attach your spec sheet as a PDF.</p>
+            </li>
+            <li class="step">
+                <span class="step-number" aria-hidden="true">02</span>
+                <h3 class="step-title">GET A QUOTE</h3>
+                <p>The lab replies with a fixed price and turnaround. Nothing is charged until you accept.</p>
+            </li>
+            <li class="step">
+                <span class="step-number" aria-hidden="true">03</span>
+                <h3 class="step-title">ACCEPT AND SEND YOUR SAMPLE</h3>
+                <p>Your payment is held by OpenLab. Drop off or mail your sample using the lab's instructions.</p>
+            </li>
+            <li class="step">
+                <span class="step-number" aria-hidden="true">04</span>
+                <h3 class="step-title">RECEIVE YOUR RESULTS</h3>
+                <p>The lab posts a summary and a report PDF to your dashboard. Only then is the lab paid.</p>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Featured labs -->
+    <section class="section section-ruled" id="featured" aria-labelledby="featured-title">
+        <div class="section-head">
+            <h2 class="section-title" id="featured-title">LABS TAKING REQUESTS</h2>
+            <a class="text-link" href="labs.html">SEE EVERY LAB →</a>
+        </div>
+        <div class="lab-grid">
+            <article class="lab-card">
+                <a href="lab.html?id=northshore">
+                    <p class="lab-type">University core facility · Montréal</p>
+                    <h3 class="lab-name">NORTHSHORE MATERIALS CHARACTERIZATION FACILITY</h3>
+                    <ul class="tags">
+                        <li>Materials analysis</li>
+                        <li>Microscopy &amp; imaging</li>
+                    </ul>
+                    <dl class="lab-facts">
+                        <div><dt>Tests from</dt><dd>$120</dd></div>
+                        <div><dt>Fastest</dt><dd>5 days</dd></div>
+                    </dl>
+                </a>
+            </article>
+            <article class="lab-card">
+                <a href="lab.html?id=atwater">
+                    <p class="lab-type">Independent lab · Montréal</p>
+                    <h3 class="lab-name">ATWATER MECHANICAL TEST LAB</h3>
+                    <ul class="tags">
+                        <li>Mechanical testing</li>
+                        <li>Thermal analysis</li>
+                    </ul>
+                    <dl class="lab-facts">
+                        <div><dt>Tests from</dt><dd>$90</dd></div>
+                        <div><dt>Fastest</dt><dd>4 days</dd></div>
+                    </dl>
+                </a>
+            </article>
+            <article class="lab-card">
+                <a href="lab.html?id=rivesud">
+                    <p class="lab-type">Independent lab · Longueuil</p>
+                    <h3 class="lab-name">RIVE-SUD SURFACE ANALYSIS</h3>
+                    <ul class="tags">
+                        <li>Surface &amp; coatings</li>
+                        <li>Microscopy &amp; imaging</li>
+                    </ul>
+                    <dl class="lab-facts">
+                        <div><dt>Tests from</dt><dd>$75</dd></div>
+                        <div><dt>Fastest</dt><dd>3 days</dd></div>
+                    </dl>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- For labs -->
+    <section class="statement" id="for-labs" aria-labelledby="labs-title">
+        <h2 class="statement-title" id="labs-title">RUN A LAB? FILL THE HOURS BETWEEN PROJECTS.</h2>
+        <p>List the tests you already run. Requests arrive in one inbox with the method, sample and deadline
+            filled in. You set the price, and you can decline anything.</p>
+        <a class="btn" href="../LABPAGE/Labs.html">OPEN THE LAB PORTAL</a>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div id="left_side">
+        <img src="../Assets/Light.png" id="logo2" alt="OpenLab">
+        <p>Pay labs to run the tests you can't do yourself.</p>
+        <p>123-456-789</p>
+        <p><a href="mailto:waqar.baig613@gmail.com">waqar.baig613@gmail.com</a></p>
+    </div>
+
+    <div id="right_side">
+        <div id="services">
+            <h3>SERVICES</h3>
+            <a href="labs.html">Find a lab</a>
+            <a href="#how">How it works</a>
+            <a href="register.html">Create an account</a>
+            <a href="lab-login.html">Lab portal</a>
+        </div>
+        <div id="test_types">
+            <h3>TEST TYPES</h3>
+            <a href="labs.html?category=mechanical">Mechanical testing</a>
+            <a href="labs.html?category=materials">Materials analysis</a>
+            <a href="labs.html?category=microscopy">Microscopy &amp; imaging</a>
+            <a href="labs.html?category=thermal">Thermal analysis</a>
+            <a href="labs.html?category=electrical">Electrical testing</a>
+            <a href="labs.html?category=surface">Surface &amp; coatings</a>
+        </div>
+    </div>
+
+    <p id="footer_note">A SOEN 287 course project. All labs are fictional and payments are simulated.</p>
+</footer>
+
+</body>
+</html>
