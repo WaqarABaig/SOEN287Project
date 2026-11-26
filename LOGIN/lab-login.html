@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab portal sign in · OpenLab</title>
+    <meta name="description" content="Sign in to the OpenLab lab portal.">
+    <!-- home.css styles the header, footer and shared pieces; pages.css adds this page's parts -->
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="../Pages/pages.css">
+    <!-- "defer" waits until the page has loaded, and keeps this order:
+         data.js first, since the other files use what it defines -->
+    <script src="../Pages/data.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="login.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================== HEADER ============================== -->
+<header id="site-header">
+    <a href="/HOMEPAGE/home.html" id="logo-link">
+        <img src="../Assets/darkmode.png" id="logo" alt="OpenLab">
+    </a>
+
+    <!-- Only shown on phones: opens and closes the menu -->
+    <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="bars" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+    </button>
+
+    <nav id="main-nav" aria-label="Main">
+        <ul id="header_tags">
+            <!-- Dropdown: opens on hover (computer) or on click/tap (any device) -->
+            <li class="dropdown">
+                <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="labs-menu">
+                    LABS <span class="caret" aria-hidden="true">▾</span>
+                </button>
+                <div class="menu" id="labs-menu">
+                    <div class="menu-col">
+                        <p class="menu-heading">BROWSE BY TEST TYPE</p>
+                        <ul class="menu-links menu-links-2col">
+                            <li><a href="../Pages/labs.html?category=mechanical">MECHANICAL TESTING</a></li>
+                            <li><a href="../Pages/labs.html?category=materials">MATERIALS ANALYSIS</a></li>
+                            <li><a href="../Pages/labs.html?category=microscopy">MICROSCOPY &amp; IMAGING</a></li>
+                            <li><a href="../Pages/labs.html?category=thermal">THERMAL ANALYSIS</a></li>
+                            <li><a href="../Pages/labs.html?category=electrical">ELECTRICAL TESTING</a></li>
+                            <li><a href="../Pages/labs.html?category=surface">SURFACE &amp; COATINGS</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-col">
+                        <p class="menu-heading">DIRECTORY</p>
+                        <ul class="menu-links">
+                            <li><a href="../Pages/labs.html">ALL LABS</a></li>
+                            <li><a href="home.html#how">HOW A REQUEST WORKS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li><a class="nav-link" href="home.html#how">HOW IT WORKS</a></li>
+            <li><a class="nav-link" href="lab-login.html">FOR LABS</a></li>
+        </ul>
+
+        <div id="logs">
+            <a id="log" href="login.html">SIGN IN</a>
+            <a id="start" class="btn" href="../Pages/labs.html">START A REQUEST</a>
+        </div>
+    </nav>
+</header>
+
+<!-- ============================== MAIN ============================== -->
+<main id="main" class="page">
+    <section class="auth">
+        <h1 class="page-title">LAB PORTAL</h1>
+        <p class="lede">Sign in to see requests sent to your lab.</p>
+
+        <form class="form" id="sign-in" data-role="lab" novalidate>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+
+            <div class="field">
+                <label for="email">Lab email</label>
+                <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error">
+                <p class="field-error" id="email-error" hidden></p>
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <div class="password-row">
+                    <input id="password" name="password" type="password" autocomplete="current-password" aria-describedby="password-error">
+                    <button class="show-password" type="button" aria-controls="password" aria-pressed="false">SHOW</button>
+                </div>
+                <p class="field-error" id="password-error" hidden></p>
+            </div>
+
+            <button class="btn btn-block" type="submit">SIGN IN TO THE PORTAL</button>
+        </form>
+
+        <p class="demo-note">Demo account: atwater@example.com / openlab-lab-demo</p>
+        <p class="auth-alt">Lab accounts are set up by OpenLab. Looking to order a test? <a href="login.html">Sign in as a customer</a></p>
+    </section>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+    <div id="left_side">
+        <img src="../Assets/Light.png" id="logo2" alt="OpenLab">
+        <p>Pay labs to run the tests you can't do yourself.</p>
+        <p>123-456-789</p>
+        <p><a href="mailto:waqar.baig613@gmail.com">waqar.baig613@gmail.com</a></p>
+    </div>
+
+    <div id="right_side">
+        <div id="services">
+            <h3>SERVICES</h3>
+            <a href="../Pages/labs.html">Find a lab</a>
+            <a href="home.html#how">How it works</a>
+            <a href="register.html">Create an account</a>
+            <a href="lab-login.html">Lab portal</a>
+        </div>
+        <div id="test_types">
+            <h3>TEST TYPES</h3>
+            <a href="../Pages/labs.html?category=mechanical">Mechanical testing</a>
+            <a href="../Pages/labs.html?category=materials">Materials analysis</a>
+            <a href="../Pages/labs.html?category=microscopy">Microscopy &amp; imaging</a>
+            <a href="../Pages/labs.html?category=thermal">Thermal analysis</a>
+            <a href="../Pages/labs.html?category=electrical">Electrical testing</a>
+            <a href="../Pages/labs.html?category=surface">Surface &amp; coatings</a>
+        </div>
+    </div>
+
+    <p id="footer_note">A SOEN 287 course project. All labs are fictional and payments are simulated.</p>
+</footer>
+
+</body>
+</html>
