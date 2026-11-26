@@ -23,12 +23,12 @@ html {
 body {
     /* Browsers add an 8px margin around the page by default */
     margin: 0;
-    background: #000;
-    color: #fff;
+    background: black;
+    color: white;
     /* A list of fonts: the browser uses the first one installed on the
        device, and "monospace" at the end is the guaranteed fallback */
     font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
-    font-size: 15px;
+    font-size: 18px;
     /* Space between lines, as a multiple of the font size (no unit needed) */
     line-height: 1.6;
 }
@@ -39,7 +39,6 @@ a {
 }
 
 img,
-svg,
 video {
     /* Images are inline by default, like a word in a sentence, which leaves
        a small gap underneath them. Block removes that gap. */
@@ -70,7 +69,7 @@ p {
 /* The outline that shows which element is selected when you use the Tab key.
    ":focus-visible" shows it for the keyboard but not after a mouse click. */
 :focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid white; /*=================================================================================================CHECK USECASE */
     outline-offset: 3px;
 }
 
@@ -95,8 +94,8 @@ p {
     top: -60px;
     /* Higher z-index = drawn on top. 2000 puts it above the header (1000). */
     z-index: 2000;
-    background: #fff;
-    color: #000;
+    background: white;
+    color: black;
     padding: 8px 14px;
     font-weight: bold;
 }
@@ -119,8 +118,8 @@ p {
     padding: 0 20px;
     /* rgba is red, green, blue, then opacity from 0 to 1: black at 40% */
     background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    border: 1px solid #fff;
+    color: white;
+    border: 1px solid white;
     /* Rounds the corners */
     border-radius: 6px;
     /* Buttons and form fields don't inherit the page font, so set it here */
@@ -133,17 +132,18 @@ p {
     /* Shows the pointing hand, like over a link */
     cursor: pointer;
     /* Fades between colors over 0.2 seconds instead of switching instantly */
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* ":hover" applies while the mouse is over the element */
 .btn:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: white;
+    color: black;
 }
 
-.btn-ghost {
-    border-color: rgba(255, 255, 255, 0.5);
+.btn-ghost { /* Video button color */
+    border-color: rgba(255, 255, 255,1);
+
 }
 
 /* Header */
@@ -161,18 +161,18 @@ p {
     width: 100%;
     height: 70px;
     padding: 0 20px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.1);
     /* Blurs whatever shows through the see-through background */
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(9px);
     /* Keeps the header on top of everything that scrolls under it */
     z-index: 1000;
-    transition: background-color 0.3s;
+    transition: background-color 1ms;
 }
 
 /* script.js adds the "scrolled" class once you scroll past the video, so the
    menu stays readable over the black sections */
 #site-header.scrolled {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
@@ -226,7 +226,7 @@ nav {
     background: none;
     border: none;
     border-radius: 6px;
-    color: #fff;
+    color: white;
     font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
     font-weight: bold;
     font-size: 15px;
@@ -237,7 +237,7 @@ nav {
 
 .nav-link:hover,
 .dropdown-toggle:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 #logs {
@@ -247,10 +247,10 @@ nav {
 }
 
 #log {
-    padding: 8px 12px;
+    padding:12px;
     font-weight: bold;
     text-decoration: none;
-    color: #fff;
+    color: white;
 }
 
 #log:hover {
@@ -274,7 +274,7 @@ nav {
     /* Inline elements can't be rotated; inline-block can */
     display: inline-block;
     margin-left: 4px;
-    transition: transform 0.2s;
+    transition: transform 5ms;
 }
 
 /* Two classes with no space: the element must have both, "dropdown" and "open" */
@@ -294,9 +294,9 @@ nav {
     /* Space between the two columns of the menu */
     gap: 40px;
     padding: 24px 28px;
-    background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(6px);
-    border: 1px solid #fff;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    border: 1px solid white;
     border-radius: 6px;
     /* A soft shadow: across 0, down 8px, blur 24px, black at 50% */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -320,7 +320,7 @@ nav {
 }
 
 .menu-heading {
-    color: #b3b3b3;
+    color: grey;
     font-size: 12px;
     letter-spacing: 0.08em;
     margin-bottom: 10px;
@@ -370,7 +370,7 @@ nav {
     /* Crops anything that spills out, like the edges of the video */
     overflow: hidden;
     /* Shows if the video can't load */
-    background: #111;
+    background: black;
 }
 
 #video {
@@ -414,14 +414,12 @@ nav {
        "rem" is a multiple of the page's base font size (usually 16px). */
     font-size: clamp(2.2rem, 5.5vw, 4.4rem);
     line-height: 1.05;
-    /* Slightly tighter letters for big text */
-    letter-spacing: -0.01em;
     /* "ch" is the width of one character: about 14 letters per line */
     max-width: 14ch;
 }
 
 #description {
-    color: #e6e6e6;
+    color: lightgrey;
     font-size: clamp(15px, 1.4vw, 18px);
     margin: 22px 0 30px;
     /* Long lines are hard to read; this keeps them to about 60 characters */
@@ -442,18 +440,19 @@ nav {
     z-index: 1;
     font-size: 12px;
     letter-spacing: 0.15em;
-    color: #b3b3b3;
+    color: lightgrey;
     text-decoration: none;
 }
 
 .scroll-cue:hover {
-    color: #fff;
+    color: white;
+    font-weight: bolder;
 }
 
 /* Main sections */
 main {
-    background: #000;
-    color: #fff;
+    background: black;
+    color: white;
 }
 
 .section {
@@ -480,7 +479,7 @@ main {
 }
 
 .text-link {
-    color: #b3b3b3;
+    color: white;
     font-weight: bold;
     font-size: 14px;
     text-decoration: none;
@@ -489,7 +488,7 @@ main {
 }
 
 .text-link:hover {
-    color: #fff;
+    color: white;
 }
 
 /* Test type tiles */
@@ -517,7 +516,7 @@ main {
 }
 
 .type-tile:hover {
-    border-color: #fff;
+    border-color: white;
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -537,7 +536,7 @@ main {
 }
 
 .plot .line {
-    stroke: #b3b3b3;
+    stroke: lightgrey;
     stroke-width: 2;
     fill: none;
     /* Rounded corners and ends on the lines */
@@ -555,7 +554,7 @@ main {
 
 /* Hovering anywhere on the tile brightens the chart inside it */
 .type-tile:hover .line {
-    stroke: #fff;
+    stroke: white;
 }
 
 .type-name {
@@ -563,7 +562,7 @@ main {
 }
 
 .type-meta {
-    color: #b3b3b3;
+    color: lightgrey;
     font-size: 13px;
     margin: 6px 0 0;
 }
@@ -580,7 +579,7 @@ main {
 }
 
 .step {
-    border-top: 1px solid #fff;
+    border-top: 1px solid white;
     padding-top: 18px;
 }
 
@@ -599,7 +598,7 @@ main {
 }
 
 .step p {
-    color: #b3b3b3;
+    color: lightgrey;
     font-size: 14px;
     margin: 0;
 }
@@ -620,7 +619,7 @@ main {
 }
 
 .lab-card:hover {
-    border-color: #fff;
+    border-color: white;
 }
 
 .lab-card a {
@@ -633,7 +632,7 @@ main {
 }
 
 .lab-type {
-    color: #b3b3b3;
+    color: lightgrey;
     font-size: 13px;
     margin-bottom: 8px;
 }
@@ -658,7 +657,7 @@ main {
     border-radius: 6px;
     padding: 2px 8px;
     font-size: 12px;
-    color: #b3b3b3;
+    color: lightgrey;
 }
 
 /* The "Tests from / Fastest" row at the bottom of each card */
@@ -675,7 +674,7 @@ main {
 
 /* <dl> is a list of labels (<dt>) and their values (<dd>) */
 .lab-facts dt {
-    color: #b3b3b3;
+    color: lightgrey;
     font-size: 12px;
 }
 
@@ -698,8 +697,8 @@ main {
     max-width: 22ch;
 }
 
-.statement p {
-    color: #b3b3b3;
+.statement p { /* Subtexts */
+    color: grey;
     max-width: 60ch;
     margin: 20px 0 28px;
 }
@@ -714,7 +713,7 @@ footer {
     color: black;
     /* Three values: top 48px, left and right 5%, bottom 28px */
     padding: 48px 5% 28px;
-    background-color: #fff;
+    background-color: white;
 }
 
 footer a {
@@ -722,13 +721,13 @@ footer a {
 }
 
 #logo2 {
-    width: 150px;
+    width: 300px;
     height: auto;
     margin-bottom: 16px;
 }
 
 #left_side p {
-    margin: 0 0 6px;
+    margin: 0 0 1px;
     font-size: 14px;
 }
 
@@ -738,7 +737,7 @@ footer a {
 }
 
 #right_side h3 {
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0.08em;
     margin-bottom: 12px;
 }
@@ -755,6 +754,7 @@ footer a {
 #services a:hover,
 #test_types a:hover {
     text-decoration: underline;
+    font-weight: bold;
 }
 
 #footer_note {
@@ -764,7 +764,7 @@ footer a {
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
     font-size: 12px;
-    color: #555;
+    color: grey;
 }
 
 /* Tablets */
@@ -842,7 +842,7 @@ footer a {
         display: block;
         width: 22px;
         height: 2px;
-        background: #fff;
+        background: white;
         position: relative;
         transition: transform 0.2s;
     }
@@ -939,7 +939,7 @@ footer a {
         padding: 4px 0 12px 16px;
         background: none;
         border: none;
-        border-left: 1px solid rgba(255, 255, 255, 0.25);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 0;
         box-shadow: none;
         /* Lets long items wrap again on a narrow screen */
